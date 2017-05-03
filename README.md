@@ -11,10 +11,10 @@ Input an MNI coordinate, output the corresponding AAL(Automated Anatomical Label
  ### 2.How to use the mni-to-aal R function?
  - #### **The Main Function: mni_to_region_name(x=x,y=y,z=z,distance=T)**
  - Example 1: (*When the mni coordinate has a corresponding region*):
- **mni_to_region_name(26,0,0) 
+ **mni_to_region_name(26,0,0)  
 --> Output :"Putamen_R","distance=0"**
  - Example2 : (*When the mni coordinate do NOT have a corresponding region*)
- **mni_to_region_name(0,0,0) 
+ **mni_to_region_name(0,0,0)  
 --> Output :Thalamus_L","distance=7.81025"**
 - Description: 
     - x, y, z : x,y,z value of the mni coordinate.
