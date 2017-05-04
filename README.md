@@ -48,7 +48,7 @@
 ### 2. 函數說明：mni_to_region_name(x=x,y=y,z=z,distance=T)
 - 例子一: (*當MNI座標有直接對應的AAL腦區名稱時*)
  **mni_to_region_name(26,0,0)  
---> 輸出:"Putamen_R","distance=0"**
+--> 輸出:"Putamen_R","distance=0"**  
 - 例子二: (*當MNI座標 **沒有** 直接對應的AAL腦區名稱時*)
  **mni_to_region_name(0,0,0) 
 --> 輸出 :Thalamus_L","distance=7.81025"**
