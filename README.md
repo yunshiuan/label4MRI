@@ -3,11 +3,15 @@
 &#13;&#10;
 - ##### 在R程式語言中輸入MNI座標，輸出對應的AAL腦區。
 
-<English version instruction. (中文版本說明在後方)>
+<English version instruction comes first. (中文版本說明在後方)>
 #### CATALOG 
     1.Why and when do I need the function?
     2.How to use the mni-to-aal R function?
     3.How to install it? Simple easy!
+#### 目錄 
+    1.何時我需要用到這個函數呢 ?
+    2.該怎麼使用這個函數呢?
+    3.如何安裝?非常簡單!
 ### 1.Why and when do I need the function?
 - Those who work with MRI (Magnetic resonance imaging) data **often want to know how dozens of MNI coordinate corresponds to which anatomical brain regions  (e.g.[x=18, y=-5, z=20] belong to the brain region"Right Caudate")**. 
 
@@ -20,7 +24,7 @@
  **mni_to_region_name(26,0,0)  
 --> Output :"Putamen_R","distance=0"**
  - Example2 : (*When the mni coordinate do NOT have a corresponding region*)
- **mni_to_region_name(0,0,0) 
+ **mni_to_region_name(0,0,0)  
 --> Output :Thalamus_L","distance=7.81025"**
 - Description: 
     - x, y, z : x,y,z value of the mni coordinate.
@@ -31,11 +35,11 @@
         
  ### 3. How to install it? Simple easy!
   #### Step1: Download the following file: _"mmi2aal.RData"_  
-  #### Step2: Load the RData to your R environment  
+  #### Step2: Load the RData into your R environment  
  - ##### R code: load("mni2aal.RData")
  - ##### Note: If the .RData file is not in your working directory, please use the code:load("D:\\\\yourdirectory\\\\mni2aal.RData")
   #### Step3: Install completed! 
- - ##### Try "mni_to_region_name(20,-15,-18)", you should get "Region= ParaHippocampus; distance=0 "   
+ - ##### Try "mni_to_region_name(20,-15,-18)", you should get "Region= ParaHippocampus; distance=0 "  
 
  ### 1.何時我需要用到這個函數呢 ?：
  - 有時後MNI 座標非常多，希望能一次**知道所有MNI座標所對應的AAL的腦區名稱**為何。然而，目前的程式都是GUI介面(如：MRIcron,XJview,aal.toolbox)，要手動一個一個按按鈕，當作標很多的時候很花時間，且也無法和R code鑲嵌再一起。目前似乎沒有人寫能在command line執行的function code。
@@ -60,4 +64,4 @@
  - ##### R 指令: load("mni2aal.RData")
  - ##### 注意到，如果下載的.RData檔案不在工作路徑中，則請用如下的指令:  load("D:\\\\yourdirectory\\\\mni2aal.RData")
   #### 步驟三:安裝完成!
- - ##### 測試看看 "mni_to_region_name(20,-15,-18)",你應該會看到 "Region= ParaHippocampus; distance=0"。  
+ - ##### 測試看看 "mni_to_region_name(20,-15,-18)",你應該會看到 "Region= ParaHippocampus; distance=0"。   
