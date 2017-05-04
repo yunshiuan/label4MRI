@@ -8,6 +8,7 @@
     1.Why and when do I need the function?
     2.How to use the mni-to-aal R function?
     3.How to install it? Simple easy!
+    4.Advanced issue: What if I have a hundred of MNI coordinates?
 #### 目錄 
     1.何時我需要用到這個函數呢 ?
     2.該怎麼使用這個函數呢?
@@ -40,7 +41,24 @@
  - ##### Note: If the .RData file is not in your working directory, please use the code:load("D:\\\\yourdirectory\\\\mni2aal.RData")
   #### Step3: Install completed! 
  - ##### Try "mni_to_region_name(20,-15,-18)", you should get "Region= ParaHippocampus; distance=0 "  
-
+ ### 4.Advanced issue: What if I have a hundred of MNI coordinates?
+##### When one has a hundred of MNI coordinates and want to know their corresponding AAL region name, one could simple implement the following R code:  
+ - (1) Create a data frame which contain all the MNI coordinates.
+    -"m" as a data frame, contain 100 rows of MNI coordinates, along with 3 variables represent their MNI coordinates. "m$x" corresponds to the x value of MNI coordinate of the 100 MNI coordinates, and so on.
+    | mni_x | mni_y | mni_z |
+    | ------ | ------ | ----|
+    | -2| -19| -16|
+    |11|4 | -8|
+    |3|4|-19|
+    |...|...|...|
+ - (2) Parallel process the 100 MNI coordinates.
+    - R code: **Result=t(mapply(FUN=mni_to_region_name,x=m$x,y=m$y,z=m$z))**
+- (3) Access the result.
+    - Get the tidy format of the AAL name of the 100 MNI coordinates.  
+     -->Print(Result) 
+    - If you want to save it as a csv file for further usage.  
+    --> write.csv(Result,"Myresult.csv")
+    
  ### 1.何時我需要用到這個函數呢 ?：
  - 有時後MNI 座標非常多，希望能一次**知道所有MNI座標所對應的AAL的腦區名稱**為何。然而，目前的程式都是GUI介面(如：MRIcron,XJview,aal.toolbox)，要手動一個一個按按鈕，當作標很多的時候很花時間，且也無法和R code鑲嵌再一起。目前似乎沒有人寫能在command line執行的function code。
  - 因此，我用Rcode寫了可以執行該功能的函數。歡迎有需要的人下載使用。該函數已被測試過，結果和MRIcron的完全相同，可以放心使用。此外，**該函數比MRIcron更厲害**，當MNI座標沒有直接對應的腦區名稱時，可以回報離它最近的腦區名稱以及對應的距離。
