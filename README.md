@@ -2,7 +2,11 @@
 Input an MNI coordinate, output the corresponding AAL(Automated Anatomical Labeling) brain region name.
 
 <English version instruction. (中文版本說明在後方)>
-### 1.Why and when do I need to use the function?
+#### CATALOG 
+    1.Why and when do I need the function?
+    2.How to use the mni-to-aal R function?
+    3.How to install it? Simple easy!
+### 1.Why and when do I need the function?
 - Those who work with MRI (Magnetic resonance imaging) data often **want to know what a given mni coordinate corespond to which anatomical brain region (e.g.[x=18, y=-5, z=20] belong to the brain region"Right Caudate")**.
 
 - However, to my knowledge, **all the free programs/tools with this feature are GUI-based(e.g. MRIcron, XJview,aal toolbox)**. That is, one need to manually key in/click on the interested MNI coordinate and manullay copy down the region name shown on the screen. This could be quite tedious and time-consuming when one is dealing with dozens or more MNI coordiante. **Yet, none available tools provide program-embedded codes.**
@@ -24,5 +28,10 @@ Input an MNI coordinate, output the corresponding AAL(Automated Anatomical Label
         - If distance=F, output a string of region name when available, otherwise output *"Not exactly correspond to aal-labeled brain region. Please set distance=T if youn want the nearest aal-labeled region name."*.
         
  ### 3. How to install it? Simple easy!
-  #### Step1: Download the two following files:  
-#### "mni_to_region_name.R" and "mmi2aal.RData"
+  #### Step1: Download the following file: _"mmi2aal.RData"_  
+  #### Step2: Load the RData to your R environment  
+ - ##### R code: load("mni2aal.RData")
+ - ##### Note: If the .RData file is not in your working directory, please use the code: load("D:\\\\yourdirectory\\\\mni2aal.RData")
+  #### Step3: Install completed! 
+ - ##### Try "mni_to_region_name(20,-15,-18)", you should get "Region= ParaHippocampus; distance=0 "   
+
