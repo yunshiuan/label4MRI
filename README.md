@@ -71,7 +71,7 @@
  **mni_to_region_name(26,0,0)  
 --> 輸出:"Putamen_R","distance=0"**
 - 例子二: (*當MNI座標 **沒有** 直接對應的AAL腦區名稱時*)
- **mni_to_region_name(0,0,0) 
+ **mni_to_region_name(0,0,0)  
 --> 輸出 :Thalamus_L","distance=7.81025"**
 - 描述: 
     - x, y, z : MNI 座標的x,y,z 值.
@@ -101,8 +101,8 @@
  - (2) 平行處理這一百個座標。
     - R 語言指令:  
     **Result=t(mapply(FUN=mni_to_region_name,x=m$x,y=m$y,z=m$z))**
-- (3) 取得結果
-    - 檢視結果:
+- (3) 取得結果  
+    - 檢視結果:  
      -->View(Result) 
-    - 如果想存成csv檔以供後續使用:
+    - 如果想存成csv檔以供後續使用:  
     --> write.csv(Result,"Myresult.csv")
