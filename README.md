@@ -13,6 +13,7 @@
     1.何時我需要用到這個函數呢 ?
     2.該怎麼使用這個函數呢?
     3.如何安裝?非常簡單!
+    4.進階議題:如果我有100個MNI座標呢?
 ### 1.Why and when do I need the function?
 - Those who work with MRI (Magnetic resonance imaging) data **often want to know how dozens of MNI coordinate corresponds to which anatomical brain regions  (e.g.[x=18, y=-5, z=20] belong to the brain region"Right Caudate")**. 
 
@@ -57,7 +58,7 @@
     - R code: **Result=t(mapply(FUN=mni_to_region_name,x=m$x,y=m$y,z=m$z))**
 - (3) Access the result.
     - Get the tidy format of the AAL name of the 100 MNI coordinates.  
-     -->Print(Result) 
+     -->View(Result) 
     - If you want to save it as a csv file for further usage.  
     --> write.csv(Result,"Myresult.csv")
     
@@ -85,3 +86,21 @@
  - ##### 注意到，如果下載的.RData檔案不在工作路徑中，則請用如下的指令:  load("D:\\\\yourdirectory\\\\mni2aal.RData")
   #### 步驟三:安裝完成!
  - ##### 測試看看 "mni_to_region_name(20,-15,-18)",你應該會看到 "Region= ParaHippocampus; distance=0"。   
+ ### 4.進階議題:如果我有一百個MNI座標呢?
+##### 當你有一百個MNI座標，並且想知道他們的AAL腦區名稱時，你可以輕鬆地透過下方的R語言指令快速解決 (10秒完成100個座標!)。
+ - (1) 創造一個data frame。裡面包含這一百個MNI座標的數值。
+ -"m"是一個data frame,裡面包含這100個MNI座標的3個變數-x,y,z座標的值。"m$x"是這100個MNI座標的x值，以此類推。 
+     mni_x | mni_y | mni_z 
+    | ------ | ------ | ----|
+    | -2| -19| -16|
+    |11|4 | -8|
+    |3|4|-19|
+    |...|...|...|
+ - (2) 平行處理這一百個座標。
+    - R 語言指令:  
+    **Result=t(mapply(FUN=mni_to_region_name,x=m$x,y=m$y,z=m$z))**
+- (3) 取得結果
+    - 檢視結果:
+     -->View(Result) 
+    - 如果想存成csv檔以供後續使用:
+    --> write.csv(Result,"Myresult.csv")
