@@ -44,13 +44,15 @@
  ### 4.Advanced issue: What if I have a hundred of MNI coordinates?
 ##### When one has a hundred of MNI coordinates and want to know their corresponding AAL region name, one could simple implement the following R code:  
  - (1) Create a data frame which contain all the MNI coordinates.
-    -"m" as a data frame, contain 100 rows of MNI coordinates, along with 3 variables represent their MNI coordinates. "m$x" corresponds to the x value of MNI coordinate of the 100 MNI coordinates, and so on.
-    | mni_x | mni_y | mni_z |
-    | ------ | ------ | ----|
-    | -2| -19| -16|
-    |11|4 | -8|
-    |3|4|-19|
-    |...|...|...|
+    -"m" as a data frame, contain 100 rows of MNI coordinates, along with 3 variables represent their MNI coordinates. "m$x" corresponds to the x value of MNI coordinate of the 100 MNI coordinates, and so on.  
+       
+     |mni_x | mni_y | mni_z|
+     |------ | ------ | ----|
+     |-2    | -19   | -16|
+     |11    | 4  | -8|
+     |3 | 4 | -19|
+     |...|...|...|  
+       
  - (2) Parallel process the 100 MNI coordinates.
     - R code: **Result=t(mapply(FUN=mni_to_region_name,x=m$x,y=m$y,z=m$z))**
 - (3) Access the result.
