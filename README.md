@@ -1,5 +1,7 @@
 # MRI-labeling: MNI-to-AAL
-Input an MNI coordinate, output the corresponding AAL(Automated Anatomical Labeling) brain region name.
+- ##### Under the R program environment,input an MNI coordinate, output the corresponding AAL(Automated Anatomical Labeling) brain region name.  
+&#13;&#10;
+- ##### 在R程式語言中輸入MNI座標，輸出對應的AAL腦區。
 
 <English version instruction. (中文版本說明在後方)>
 #### CATALOG 
@@ -7,11 +9,11 @@ Input an MNI coordinate, output the corresponding AAL(Automated Anatomical Label
     2.How to use the mni-to-aal R function?
     3.How to install it? Simple easy!
 ### 1.Why and when do I need the function?
-- Those who work with MRI (Magnetic resonance imaging) data often **want to know what a given mni coordinate corespond to which anatomical brain region (e.g.[x=18, y=-5, z=20] belong to the brain region"Right Caudate")**.
+- Those who work with MRI (Magnetic resonance imaging) data **often want to know how dozens of MNI coordinate corresponds to which anatomical brain regions  (e.g.[x=18, y=-5, z=20] belong to the brain region"Right Caudate")**. 
 
-- However, to my knowledge, **all the free programs/tools with this feature are GUI-based(e.g. MRIcron, XJview,aal toolbox)**. That is, one need to manually key in/click on the interested MNI coordinate and manullay copy down the region name shown on the screen. This could be quite tedious and time-consuming when one is dealing with dozens or more MNI coordiante. **Yet, none available tools provide program-embedded codes.**
+- However, to my knowledge, **all the free programs/tools with this feature are GUI-based(e.g. MRIcron, XJview,aal toolbox)**. That is, one need to manually key in/click on the interested MNI coordinate and manullay copy down the region name shown on the screen. **This could be quite tedious and time-consuming when one is dealing with dozens or more MNI coordiante. Yet, none available tools provide program-embedded code.**
 
-- Here, **I create a R script which contains functions for this MNI-to-AAL purpose.** They have been tested to ensure the MNI-to-AAL results be totally consistent with MRIcron.
+- Here, **I create an R function for this MNI-to-AAL purpose.** They have been tested to ensure the MNI-to-AAL results be totally consistent with MRIcron.
  ### 2.How to use the mni-to-aal R function?
  - #### **The Main Function: mni_to_region_name(x=x,y=y,z=z,distance=T)**
  - Example 1: (*When the mni coordinate has a corresponding region*):
@@ -58,4 +60,4 @@ Input an MNI coordinate, output the corresponding AAL(Automated Anatomical Label
  - ##### R 指令: load("mni2aal.RData")
  - ##### 注意到，如果下載的.RData檔案不在工作路徑中，則請用如下的指令:  load("D:\\\\yourdirectory\\\\mni2aal.RData")
   #### 步驟三:安裝完成!
- - ##### 測試看看 "mni_to_region_name(20,-15,-18)",你應該會看到 "Region= ParaHippocampus; distance=0"。   
+ - ##### 測試看看 "mni_to_region_name(20,-15,-18)",你應該會看到 "Region= ParaHippocampus; distance=0"。  
