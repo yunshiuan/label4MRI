@@ -32,12 +32,18 @@
     - x, y, z : x,y,z value of the mni coordinate.
     - distance(default=T): If the MNI coordinate does not belong to any AAL brain region (e.g. the pointt given fall in the ventricle), then output the nearset AAL brain region name and the their distance (mm). When the MNI coordinat do fall into an AAL brain region, then output distance=0.
     - Output: 
-        -   If distance=T,output a list with brain region name along with the distance. 
+        - If distance=T,output a list with brain region name along with the distance. 
         - If distance=F, output a string of region name when available, otherwise output *"Not exactly correspond to aal-labeled brain region. Please set distance=T if you want the nearest aal-labeled region name."*.
         
  ### 3. How to install it? Simple easy!
-  #### Step1: Download the following file: [mmi2aal.RData](https://github.com/vimchiz/MRI-labeling-MNI-to-AAL/raw/master/mni2aal.RData)  
-  #### Step2: Load the RData into your R environment  
+  #### Option A: Install in R command line
+  #### Step1: install.package("devtools") (This is only required for the first time)
+  #### Step2: library("devtools")
+  #### Step3: install_github("yunshiuan/label4MRI",subdir = "label4MRI")
+  
+  #### Option B: Download the packed RData.
+  #### Step1: Download the following file: [mmi2aal.RData](https://github.com/vimchiz/MRI-labeling-MNI-to-AAL/raw/master/mni2aal.RData) 
+  #### Step2: Load the RData into your R environment  
  - ##### R code: load("mni2aal.RData")
  - ##### Note: If the .RData file is not in your working directory, please use the code:load("D:\\\\yourdirectory\\\\mni2aal.RData")
   #### Step3: Install completed! 
