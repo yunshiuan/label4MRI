@@ -36,18 +36,22 @@
         - If distance=F, output a string of region name when available, otherwise output *"Not exactly correspond to aal-labeled brain region. Please set distance=T if you want the nearest aal-labeled region name."*.
         
  ### 3. How to install it? Simple easy!
-  #### Option A: Install in R command line
-  #### Step1: install.package("devtools") (This is only required for the first time)
-  #### Step2: library("devtools")
-  #### Step3: install_github("yunshiuan/label4MRI",subdir = "label4MRI")
-  
+  #### Option A (Recommended): Install via R command line.
+###### *Please type the following codes in R command line*
+  - ##### Step1: install.package("devtools") *#This is only required for the first time*
+  - ##### Step2: library("devtools")
+  - ##### Step3: install_github("yunshiuan/label4MRI",subdir = "label4MRI") *#This is also only required for the first time*
+  - ##### Step4: library(mni2aal)
+  - ##### Step5: Install completed! 
+    - ###### Try "mni_to_region_name(20,-15,-18)", you should get "Region= ParaHippocampus; distance=0 "
+
   #### Option B: Download the packed RData.
-  #### Step1: Download the following file: [mmi2aal.RData](https://github.com/vimchiz/MRI-labeling-MNI-to-AAL/raw/master/mni2aal.RData) 
-  #### Step2: Load the RData into your R environment  
- - ##### R code: load("mni2aal.RData")
- - ##### Note: If the .RData file is not in your working directory, please use the code:load("D:\\\\yourdirectory\\\\mni2aal.RData")
-  #### Step3: Install completed! 
- - ##### Try "mni_to_region_name(20,-15,-18)", you should get "Region= ParaHippocampus; distance=0 "  
+ - ##### Step1: Download the following file: [mmi2aal.RData](https://github.com/vimchiz/MRI-labeling-MNI-to-AAL/raw/master/mni2aal.RData) 
+ - ##### Step2: Load the RData into your R environment
+   - ###### R code: load("mni2aal.RData")
+   - ###### Note: If the .RData file is not in your working directory, please use the code:load("D:\\\\yourdirectory\\\\mni2aal.RData")
+  - ##### Step3: Install completed! 
+    - ###### Try "mni_to_region_name(20,-15,-18)", you should get "Region= ParaHippocampus; distance=0 "  
  ### 4.Advanced issue: What if I have a hundred of MNI coordinates?
 ##### When one has a hundred of MNI coordinates and want to know their corresponding AAL region name, one could simple implement the following R code:  
  - (1) Create a data frame which contain all the MNI coordinates.
@@ -86,12 +90,21 @@
         - 當distance=T時，輸出對應的腦區名稱以及距離。
         - 當 distance=F時,若有對應的AAL腦區，則輸出腦區名稱，否則，將輸出  *"Not exactly correspond to aal-labeled brain region. Please set distance=T if youn want the nearest aal-labeled region name."*
  ### 3. 如何安裝?非常簡單!
-  #### 步驟一: 下載[mmi2aal.RData](https://github.com/vimchiz/MRI-labeling-MNI-to-AAL/raw/master/mni2aal.RData)這個檔案。
-  #### 步驟二: 將這個檔案載入R環境中。 
- - ##### R 指令: load("mni2aal.RData")
- - ##### 注意到，如果下載的.RData檔案不在工作路徑中，則請用如下的指令:  load("D:\\\\yourdirectory\\\\mni2aal.RData")
-  #### 步驟三:安裝完成!
- - ##### 測試看看 "mni_to_region_name(20,-15,-18)",你應該會看到 "Region= ParaHippocampus; distance=0"。   
+  ### 選項A(建議): 透過R指令安裝 
+###### *請將以下的指令輸入R的指令視窗並執行*
+  - #### 步驟一: install.package("devtools") *#該步驟僅在第一次安裝時需要*
+  - #### 步驟二: library("devtools")
+  - #### 步驟三: install_github("yunshiuan/label4MRI",subdir = "label4MRI") *#該步驟也僅在第一次安裝時需要*
+  - #### 步驟四: library(mni2aal)
+  - #### 步驟五: 安裝完成! 
+    - ##### 測試看看 "mni_to_region_name(20,-15,-18)", 你應該會看到 "Region= ParaHippocampus;
+  ### 選項B: 下載包裹好的RData
+  - #### 步驟一: 下載[mmi2aal.RData](https://github.com/vimchiz/MRI-labeling-MNI-to-AAL/raw/master/mni2aal.RData)這個檔案。
+  - #### 步驟二: 將這個檔案載入R環境中。 
+    - ##### R 指令: load("mni2aal.RData")
+    - ##### 注意到，如果下載的.RData檔案不在工作路徑中，則請用如下的指令:  load("D:\\\\yourdirectory\\\\mni2aal.RData")
+  - #### 步驟三:安裝完成!
+    - ##### 測試看看 "mni_to_region_name(20,-15,-18)", 你應該會看到 "Region= ParaHippocampus; distance=0"。   
  ### 4.進階議題:如果我有一百個MNI座標呢?
 ##### 當你有一百個MNI座標，並且想知道他們的AAL腦區名稱時，你可以輕鬆地透過下方的R語言指令快速解決 (10秒完成100個座標!)。
  - (1) 創造一個data frame。裡面包含這一百個MNI座標的數值。
