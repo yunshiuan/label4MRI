@@ -38,7 +38,7 @@
  ### 3. How to install it? Simple easy!
   #### Option A (Recommended): Install via R command line.
 ###### *Please type the following codes in R command line*
-  - ##### Step1: install.package("devtools") *#This is only required for the first time*
+  - ##### Step1: install.packages("devtools") *#This is only required for the first time*
   - ##### Step2: library("devtools")
   - ##### Step3: install_github("yunshiuan/label4MRI",subdir = "label4MRI") *#This is also only required for the first time*
   - ##### Step4: library(mni2aal)
@@ -92,7 +92,7 @@
  ### 3. 如何安裝?非常簡單!
   ### 選項A(建議): 透過R指令安裝 
 ###### *請將以下的指令輸入R的指令視窗並執行*
-  - #### 步驟一: install.package("devtools") *#該步驟僅在第一次安裝時需要*
+  - #### 步驟一: install.packages("devtools") *#該步驟僅在第一次安裝時需要*
   - #### 步驟二: library("devtools")
   - #### 步驟三: install_github("yunshiuan/label4MRI",subdir = "label4MRI") *#該步驟也僅在第一次安裝時需要*
   - #### 步驟四: library(mni2aal)
