@@ -1,14 +1,17 @@
 
-mni_to_region_index <- function(x, y, z, distance = T) {
+mni_to_region_index <- function(x, y, z, distance = T, dset = stop("Please specify a data set name!")) {
 
-  index = as.numeric(subset(mni2aal, x_mni == round(x) & y_mni == round(y) & z_mni == round(z), select = Region_index))
+  index <- which(label4mri_metadata[[dset]]$coordinate_list[1, ] == x)
+  index <- index[which(label4mri_metadata[[dset]]$coordinate_list[2, index] == y)]
+  index <- index[which(label4mri_metadata[[dset]]$coordinate_list[3, index] == z)]
+
 
   if (distance == T) {
-    if (is.na(index) == F) {
+    if (length(index) != 0) {
       return(list(index, distance = 0))
     } else {
-      d2 = colSums((mni2aal_matrix - c(x, y, z))^2)
-      index = mni2aal$Region_index[which.min(d2)]
+      d2 = colSums((label4mri_metadata[[dset]]$coordinate_list - c(x, y, z))^2)
+      index = label4mri_metadata[[dset]]$coordinate_label[which.min(d2)]
       distance = sqrt(min(d2))
       return(list(index, distance))
     }
@@ -16,7 +19,7 @@ mni_to_region_index <- function(x, y, z, distance = T) {
     if (is.na(index) == F) {
       return(list(index))
     } else {
-      (return(paste0("Not exactly correspond to aal-labeled brain region. Please set distance=T if youn want the nearest aal-labeled region name.")))
+      (return(paste0("Not exactly correspond to labeled brain region. Please set distance=T if youn want the nearest labeled region name.")))
     }
   }
 }
