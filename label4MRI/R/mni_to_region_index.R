@@ -1,26 +1,22 @@
+mni_to_region_index <- function(x, y, z, distance = T, template = stop('Please specify a template!')) {
+  matrix_index <- which(label4mri_metadata[[template]]$coordinate_list[1, ] == x)
+  matrix_index <- matrix_index[which(label4mri_metadata[[template]]$coordinate_list[2, matrix_index] == y)]
+  matrix_index <- matrix_index[which(label4mri_metadata[[template]]$coordinate_list[3, matrix_index] == z)]
 
-mni_to_region_index <- function(x, y, z, distance = T, dset = stop("Please specify a data set name!")) {
-
-  index <- which(label4mri_metadata[[dset]]$coordinate_list[1, ] == x)
-  index <- index[which(label4mri_metadata[[dset]]$coordinate_list[2, index] == y)]
-  index <- index[which(label4mri_metadata[[dset]]$coordinate_list[3, index] == z)]
-
-
-  if (distance == T) {
-    if (length(index) != 0) {
-      return(list(index, distance = 0))
+  if (length(matrix_index) != 0) {
+    r_index <- label4mri_metadata[[template]]$coordinate_label[matrix_index]
+    r_distance <- ifelse(distance, 0, NULL)
+  } else {
+    if (distance) {
+      d2 <- colSums((label4mri_metadata[[template]]$coordinate_list - c(x, y, z))^2)
+      r_index <- label4mri_metadata[[template]]$coordinate_label[which.min(d2)]
+      r_distance <- sqrt(min(d2))
     } else {
-      d2 = colSums((label4mri_metadata[[dset]]$coordinate_list - c(x, y, z))^2)
-      index = label4mri_metadata[[dset]]$coordinate_label[which.min(d2)]
-      distance = sqrt(min(d2))
-      return(list(index, distance))
-    }
-  } else if (distance == F) {
-    if (is.na(index) == F) {
-      return(list(index, -1))
-    } else {
-      (return(list(NULL, -1)))
+      r_index <- NULL
+      r_distance <- NULL
     }
   }
+
+  return(list(index = r_index, distance = r_distance))
 }
 
