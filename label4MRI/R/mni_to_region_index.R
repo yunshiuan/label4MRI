@@ -17,9 +17,9 @@ mni_to_region_index <- function(x, y, z, distance = T, dset = stop("Please speci
     }
   } else if (distance == F) {
     if (is.na(index) == F) {
-      return(list(index))
+      return(list(index, -1))
     } else {
-      (return(paste0("Not exactly correspond to labeled brain region. Please set distance=T if youn want the nearest labeled region name.")))
+      (return(list(NULL, -1)))
     }
   }
 }
