@@ -21,7 +21,7 @@
 #'
 #' # query both aal and ba structure
 #' mni_to_region_name(26,0,0,distance=T)
-mni_to_region_name = function(x, y, z, distance = T, template = 'aal') {
+mni_to_region_name <- function(x, y, z, distance = T, template = c('aal', 'ba')) {
   if_template_exist <- template %in% names(label4mri_metadata)
 
   if(sum(!if_template_exist) != 0) {
