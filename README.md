@@ -37,14 +37,23 @@
         
  ### 3. How to install it? Simple easy!
   #### Option A (Recommended): Install via R command line.
-###### *Please type the following codes in R command line*
-  - ##### Step1: install.packages("devtools") *#This is only required for the first time*
-  - ##### Step2: library("devtools")
-  - ##### Step3: install_github("yunshiuan/label4MRI",subdir = "label4MRI") *#This is also only required for the first time*
-  - ##### Step4: library(mni2aal)
-  - ##### Step5: Install completed! 
-    - ###### Try "mni_to_region_name(20,-15,-18)", you should get "Region= ParaHippocampus; distance=0 "
+  ###### *Please type the following codes in R command line*
 
+  ```
+  # Step1: 
+  install.packages("devtools") *#This is only required for the first time*   
+  # Step2:
+  library("devtools")
+  # Step3: 
+  install_github("yunshiuan/label4MRI",subdir = "label4MRI") *#This is also only required for the first time*
+  # Step4: 
+  library(mni2aal)
+  # Step5: Install completed! 
+  # Try "mni_to_region_name(20,-15,-18)", you should get "Region= ParaHippocampus; distance=0 "
+
+  ```
+  
+ 
   #### Option B: Download the packed RData.
  - ##### Step1: Download the following file: [mmi2aal.RData](https://github.com/vimchiz/MRI-labeling-MNI-to-AAL/raw/master/mni2aal.RData) 
  - ##### Step2: Load the RData into your R environment
@@ -92,12 +101,18 @@
  ### 3. 如何安裝?非常簡單!
   ### 選項A(建議): 透過R指令安裝 
 ###### *請將以下的指令輸入R的指令視窗並執行*
-  - #### 步驟一: install.packages("devtools") *#該步驟僅在第一次安裝時需要*
-  - #### 步驟二: library("devtools")
-  - #### 步驟三: install_github("yunshiuan/label4MRI",subdir = "label4MRI") *#該步驟也僅在第一次安裝時需要*
-  - #### 步驟四: library(mni2aal)
-  - #### 步驟五: 安裝完成! 
-    - ##### 測試看看 "mni_to_region_name(20,-15,-18)", 你應該會看到 "Region= ParaHippocampus;
+```
+  # 步驟一: 
+  install.packages("devtools") *#該步驟僅在第一次安裝時需要*
+  # 步驟二: 
+  library("devtools")
+  # 步驟三: 
+  install_github("yunshiuan/label4MRI",subdir = "label4MRI") *#該步驟也僅在第一次安裝時需要*
+  # 步驟四: 
+  library(mni2aal)
+  # 步驟五: 安裝完成! 
+  # 測試看看 "mni_to_region_name(20,-15,-18)", 你應該會看到 "Region= ParaHippocampus;
+```
   ### 選項B: 下載包裹好的RData
   - #### 步驟一: 下載[mmi2aal.RData](https://github.com/vimchiz/MRI-labeling-MNI-to-AAL/raw/master/mni2aal.RData)這個檔案。
   - #### 步驟二: 將這個檔案載入R環境中。 
