@@ -1,30 +1,65 @@
-#' @title MRI-labeling: MNI to AAL
-#' @description Input an MNI coordinate, output the corresponding AAL (Automated Anatomical Labeling) brain region name.
-#' @param x A number
-#' @param y A number
-#' @param z A number
-#' @param distance  A logical value which indicates whether the distance-to-nearest-aal-region information should be shown (default=T). This could be turned off to speed up labeling process.
+#' @title MRI-labeling: label the brain MNI coordinate by AAL/BA system
+#' @description Input an MNI coordinate, output the corresponding AAL/BA brain region name.
+#' @param x The numeric x value of the MNI coordinate.
+#' @param y The numeric y value of the MNI coordinate.
+#' @param z The numeric z value of the MNI coordinate.
+#' @param distance  A logical value which indicates whether the closest region
+#' should be shown when there is no exact match (\code{default = T}).
+#' This could be turned off to speed up the labeling process.
+#' @param template A character vector which indicates the templates to use,
+#'  `aal` by default.
 #' @export
-#' @seealso \code{\link[utils]{head}}
-#' @return If distance mode is on (distance=T), output a list with brain region name along with the corresponding distance.If distance=F, output a string of region name when available, otherwise output "Not exactly correspond to aal-labeled brain region. Please set distance=T if you want the nearest aal-labeled region name.".
+#' @return If distance mode is on (\code{distance = T}),
+#' output a list of brain region names along with the corresponding distances (mm).
+#' Please set \code{distance = T} if you want the closest region name even when
+#' there is no exact matching brain region.
+#' If distance mode is off (\code{distance = F}),
+#' output a string of region names only when available,
+#' otherwise output 'NULL'.
 #' @examples
-#' # aal-corresponding point with distance mode on
-#' mni_to_region_name(26,0,0,distance=T)
-#' # aal-corresponding point with distance mode off (much faster)
-#' mni_to_region_name(26,0,0,distance=F)
+#' # exact matching brain region with distance mode on
+#' mni_to_region_name(26, 0, 0, distance = T)
+#' # exact matching brain region with distance mode off (much faster)
+#' mni_to_region_name(26, 0, 0, distance = F)
 #'
-#' #non-aal-corresponding point with distance mode on (output the nearest aal region name)
-#' mni_to_region_name(0,0,0,distance=T)
-#' #non-aal-corresponding point with distance mode off (output none aal region name)
-#'mni_to_region_name(0,0,0,distance=F)
-mni_to_region_name=function(x,y,z,distance=T)
-{r_index=mni_to_region_index(x,y,z,distance=distance)
-if (distance==T)
-{
-  return(list(region=region_index_to_name(r_index[[1]]),
-              distance=r_index[[2]]))
-}
-else if (distance==F && !is.character(r_index))
-{return(region=region_index_to_name(r_index[[1]]))}
-else {return(region=r_index)}
+#' # no exact matching brain region with distance mode on (output the nearest brain region name)
+#' mni_to_region_name(0, 0, 0, distance = T)
+#' # no exact matching brain region  with distance mode off (output nothing)
+#' mni_to_region_name(0, 0, 0, distance = F)
+#'
+#' # only acquire AAL region name
+#' mni_to_region_name(26, 0, 0, distance = T,template = "aal")
+mni_to_region_name <- function(x, y, z, distance = T, template = c("aal", "ba")) {
+  if_template_exist <- template %in% names(label4mri_metadata)
+
+  if (sum(!if_template_exist) != 0) {
+    stop(paste0("Template `", paste(template[!if_template_exist], collapse = ", "), "` does not exist."))
+  }
+
+  r_indexes <- lapply(
+    template,
+    function(.template) {
+      result <- mni_to_region_index(x, y, z, distance, .template)
+      df_region_index_name <- label4mri_metadata[[.template]]$label
+
+      result$label <- as.character(
+        df_region_index_name[
+          df_region_index_name$Region_index == result$index,
+          "Region_name"
+        ]
+      )
+      result$label <- ifelse(length(result$label) == 0, "NULL", result$label)
+      result$index <- NULL
+      result
+    }
+  )
+
+  result <- unlist(r_indexes, recursive = F)
+  names(result) <- paste(
+    rep(template, each = 2),
+    rep(c("distance", "label"), length(template)),
+    sep = "."
+  )
+
+  result
 }
