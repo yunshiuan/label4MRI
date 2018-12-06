@@ -62,8 +62,8 @@ $ba.label
 [1] "Left-Thalamus (50)"
  ```
         
- ### 3. How to install it? Simple easy!
-  #### Option A (Recommended): Install via R command line.
+ ### 3. How to install the package? Simple easy!
+  #### Install via R command line.
   ###### *Please type the following codes in R command line*
 
   ```
@@ -74,21 +74,11 @@ $ba.label
   # Step3: 
   install_github("yunshiuan/label4MRI",subdir = "label4MRI") *#This is also only required for the first time*
   # Step4: 
-  library(mni2aal)
+  library(label4MRI)
   # Step5: Install completed! 
   # Try "mni_to_region_name(x = 0, y = 0, z = 0)", you should get the results as above.
-
   ```
   
- 
-  #### Option B: Download the packed RData.
- - ##### Step1: Download the following file: [mmi2aal.RData](https://github.com/vimchiz/MRI-labeling-MNI-to-AAL/raw/master/mni2aal.RData) 
- - ##### Step2: Load the RData into your R environment
-   - ###### R code: load("mni2aal.RData")
-   - ###### Note: If the .RData file is not in your working directory, please use the code:load("D:\\\\yourdirectory\\\\mni2aal.RData")
-  - ##### Step3: Install completed! 
-    - ###### Try "mni_to_region_name(20,-15,-18)", you should get "Region= ParaHippocampus; distance=0 "  
-    
  ### 4.Advanced issue: What if I have a hundred of MNI coordinates?
 ##### When one has a hundred of MNI coordinates and want to know their corresponding AAL/BA region name, one could simply implement the following R codes:  
  - (1) Create a data frame which contains all the MNI coordinates.
