@@ -56,8 +56,8 @@ mni_to_region_name <- function(x, y, z, distance = T, template = c("aal", "ba"))
 
   result <- unlist(r_indexes, recursive = F)
   names(result) <- paste(
-    rep(template, each = 3),
-    rep(c("index", "distance", "label"), length(template)),
+    rep(template, each = 2),
+    rep(c("distance", "label"), length(template)),
     sep = "."
   )
 
