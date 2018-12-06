@@ -1,26 +1,34 @@
-#' @title MRI-labeling: MNI to AAL
-#' @description Input an MNI coordinate, output the corresponding AAL (Automated Anatomical Labeling) brain region name.
-#' @param x A number
-#' @param y A number
-#' @param z A number
-#' @param distance  A logical value which indicates whether the distance-to-nearest-aal-region information should be shown (default=T). This could be turned off to speed up labeling process.
-#' @param template A character vector indicates the templates to use, `aal` by default.
+#' @title MRI-labeling: label the brain MNI coordinate by AAL/BA system
+#' @description Input an MNI coordinate, output the corresponding AAL/BA brain region name.
+#' @param x The numeric x value of the MNI coordinate.
+#' @param y The numeric y value of the MNI coordinate.
+#' @param z The numeric z value of the MNI coordinate.
+#' @param distance  A logical value which indicates whether the closest region
+#' should be shown when there is no exact match (\code{default = T}).
+#' This could be turned off to speed up the labeling process.
+#' @param template A character vector which indicates the templates to use,
+#'  `aal` by default.
 #' @export
-#' @seealso \code{\link[utils]{head}}
-#' @return If distance mode is on (distance=T), output a list with brain region name along with the corresponding distance.If distance=F, output a string of region name when available, otherwise output 'Not exactly correspond to aal-labeled brain region. Please set distance=T if you want the nearest aal-labeled region name.'.
+#' @return If distance mode is on (\code{distance = T}),
+#' output a list of brain region names along with the corresponding distances (mm).
+#' Please set \code{distance = T} if you want the closest region name even when
+#' there is no exact matching brain region.
+#' If distance mode is off (\code{distance = F}),
+#' output a string of region names only when available,
+#' otherwise output 'NULL'.
 #' @examples
-#' # aal-corresponding point with distance mode on
+#' # exact matching brain region with distance mode on
 #' mni_to_region_name(26, 0, 0, distance = T)
-#' # aal-corresponding point with distance mode off (much faster)
+#' # exact matching brain region with distance mode off (much faster)
 #' mni_to_region_name(26, 0, 0, distance = F)
 #'
-#' # non-aal-corresponding point with distance mode on (output the nearest aal region name)
+#' # no exact matching brain region with distance mode on (output the nearest brain region name)
 #' mni_to_region_name(0, 0, 0, distance = T)
-#' # non-aal-corresponding point with distance mode off (output none aal region name)
+#' # no exact matching brain region  with distance mode off (output nothing)
 #' mni_to_region_name(0, 0, 0, distance = F)
 #'
-#' # query both aal and ba structure
-#' mni_to_region_name(26, 0, 0, distance = T)
+#' # only acquire AAL region name
+#' mni_to_region_name(26, 0, 0, distance = T,template = "aal")
 mni_to_region_name <- function(x, y, z, distance = T, template = c("aal", "ba")) {
   if_template_exist <- template %in% names(label4mri_metadata)
 
