@@ -82,7 +82,7 @@ $ba.label
  ### 4.Advanced issue: What if I have a hundred of MNI coordinates?
 ##### When one has a hundred of MNI coordinates and want to know their corresponding AAL/BA region name, one could simply implement the following R codes:  
  - (1) Create a data frame which contains all the MNI coordinates.
-    -"m" as a data frame, contain 100 rows of MNI coordinates, along with 3 variables represent their MNI coordinates. "m$x" corresponds to the x value of MNI coordinate of the 100 MNI coordinates, and so on.  
+    - "m" as a data frame, which contains 100 rows of MNI coordinates, along with 3 variables represent their MNI coordinates. "m$x" corresponds to the x value of MNI coordinate of the 100 MNI coordinates, and so on.  
        
      |mni_x | mni_y | mni_z|
      |------ | ------ | ----|
