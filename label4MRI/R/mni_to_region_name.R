@@ -23,30 +23,30 @@
 #' mni_to_region_name(26,0,0,distance=T)
 mni_to_region_name <- function(x, y, z, distance = T, template = c('aal', 'ba')) {
   if_template_exist <- template %in% names(label4mri_metadata)
-
+  
   if(sum(!if_template_exist) != 0) {
     stop(paste0('Template `', paste(template[!if_template_exist], collapse = ', '), '` does not exist.'))
   }
-
+  
   r_indexes <- lapply(
     template,
     function(.template) {
       result <- mni_to_region_index(x, y, z, distance, .template)
-
+      
       result$label <- as.character(
         label4mri_metadata[[.template]]$label[label4mri_metadata[[.template]]$label$Region_index == result$index, "Region_name"]
       )
-
+      result$label <- ifelse(length(result$label)==0,"NULL",result$label)
       result
     }
   )
-
+  
   result <- unlist(r_indexes, recursive = F)
   names(result) <- paste(
     rep(template, each = 3),
     rep(c('index', 'distance', 'label'), length(template)),
     sep = '.'
   )
-
+  
   result
 }
