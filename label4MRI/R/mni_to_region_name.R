@@ -6,8 +6,9 @@
 #' @param distance  A logical value which indicates whether the closest region
 #' should be shown when there is no exact match (\code{default = T}).
 #' This could be turned off to speed up the labeling process.
-#' @param template A character vector which indicates the templates to use,
-#'  `aal` by default.
+#' @param template A character vector which indicates the templates to use.
+#' By default, both `Automated Anatomical Labeling (aal)` and `Broadmann (ba)` 
+#' region names are returned.
 #' @export
 #' @return If distance mode is on (\code{distance = T}),
 #' output a list of brain region names along with the corresponding distances (mm).
