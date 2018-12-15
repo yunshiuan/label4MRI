@@ -17,8 +17,8 @@ mni_to_region_name(x, y, z, distance = T, template = c("aal", "ba"))
 should be shown when there is no exact match (\code{default = T}).
 This could be turned off to speed up the labeling process.}
 
-\item{template}{A character vector which indicates the templates to use,
-`aal` by default.}
+\item{template}{A character vector which indicates the templates to use
+(\code{"aal"} or \code{"ba"}). Use both of them by default.}
 }
 \value{
 If distance mode is on (\code{distance = T}),

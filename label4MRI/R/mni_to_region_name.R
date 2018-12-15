@@ -6,8 +6,8 @@
 #' @param distance  A logical value which indicates whether the closest region
 #' should be shown when there is no exact match (\code{default = T}).
 #' This could be turned off to speed up the labeling process.
-#' @param template A character vector which indicates the templates to use,
-#'  `aal` by default.
+#' @param template A character vector which indicates the templates to use
+#' (\code{"aal"} or \code{"ba"}). Use both of them by default.
 #' @return If distance mode is on (\code{distance = T}),
 #' output a list of brain region names along with the corresponding distances (mm).
 #' Please set \code{distance = T} if you want the closest region name even when
