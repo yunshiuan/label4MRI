@@ -6,7 +6,7 @@
 #' @param template One character value which indicates the templates to use
 #' (\code{"aal"} or \code{"ba"}). Use \code{"aal"} by default.
 #' @return Return a list of data frames and each of them correspond to a template.
-#' Each data frame consists the x,y,z MNI coordinates of the input brain region.
+#' Each data frame consists the MNI coordinates of the input brain region.
 #' @examples
 #' # Get the MNI cooridnates of right precentral region defined by AAL template
 #' region_name_to_mni(region_names = "Precentral_R", template = "aal")
