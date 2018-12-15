@@ -46,6 +46,3 @@ mni_to_region_name(0, 0, 0, distance = F)
 # Only acquire AAL region name
 mni_to_region_name(26, 0, 0, distance = T, template = "aal")
 }
-\seealso{
-\code{\link{region_name_to_mni}}
-}
