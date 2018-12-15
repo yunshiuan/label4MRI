@@ -8,4 +8,4 @@ Description: Input an MNI coordinate, output the corresponding brain region name
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
