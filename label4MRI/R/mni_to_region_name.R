@@ -8,7 +8,6 @@
 #' This could be turned off to speed up the labeling process.
 #' @param template A character vector which indicates the templates to use,
 #'  `aal` by default.
-#' @export
 #' @return If distance mode is on (\code{distance = T}),
 #' output a list of brain region names along with the corresponding distances (mm).
 #' Please set \code{distance = T} if you want the closest region name even when
@@ -17,18 +16,20 @@
 #' output a string of region names only when available,
 #' otherwise output 'NULL'.
 #' @examples
-#' # exact matching brain region with distance mode on
+#' # Exact matching brain region with distance mode on
 #' mni_to_region_name(26, 0, 0, distance = T)
-#' # exact matching brain region with distance mode off (much faster)
+#' # Exact matching brain region with distance mode off (much faster)
 #' mni_to_region_name(26, 0, 0, distance = F)
 #'
-#' # no exact matching brain region with distance mode on (output the nearest brain region name)
+#' # No exact matching brain region with distance mode on (output the nearest brain region name)
 #' mni_to_region_name(0, 0, 0, distance = T)
-#' # no exact matching brain region  with distance mode off (output nothing)
+#' # No exact matching brain region  with distance mode off (output nothing)
 #' mni_to_region_name(0, 0, 0, distance = F)
 #'
-#' # only acquire AAL region name
-#' mni_to_region_name(26, 0, 0, distance = T,template = "aal")
+#' # Only acquire AAL region name
+#' mni_to_region_name(26, 0, 0, distance = T, template = "aal")
+#' @export
+
 mni_to_region_name <- function(x, y, z, distance = T, template = c("aal", "ba")) {
   if_template_exist <- template %in% names(label4mri_metadata)
 
