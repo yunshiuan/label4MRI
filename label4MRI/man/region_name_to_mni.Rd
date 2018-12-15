@@ -15,7 +15,7 @@ Use \code{list_brain_regions()} to see all brain region names defined by AAL/BA 
 }
 \value{
 Return a list of data frames and each of them correspond to a template.
-Each data frame consists the x,y,z MNI coordinates of the input brain region.
+Each data frame consists the MNI coordinates of the input brain region.
 }
 \description{
 Input a brain region name, output the corresponding MNI coordinates.
