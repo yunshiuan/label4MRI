@@ -15,6 +15,7 @@
 #' If distance mode is off (\code{distance = F}),
 #' output a string of region names only when available,
 #' otherwise output 'NULL'.
+#' @seealso \code{\link{region_name_to_mni}}
 #' @examples
 #' # Exact matching brain region with distance mode on
 #' mni_to_region_name(26, 0, 0, distance = T)
