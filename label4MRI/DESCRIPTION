@@ -1,4 +1,4 @@
-Package: label4mri
+Package: label4MRI
 Type: Package
 Title: MRI-labeling: MNI-to-AAL and BA
 Version: 0.1.0
@@ -8,4 +8,4 @@ Description: Input an MNI coordinate, output the corresponding brain region name
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
