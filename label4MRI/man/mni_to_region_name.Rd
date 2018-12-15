@@ -33,16 +33,19 @@ otherwise output 'NULL'.
 Input an MNI coordinate, output the corresponding AAL/BA brain region name.
 }
 \examples{
-# exact matching brain region with distance mode on
+# Exact matching brain region with distance mode on
 mni_to_region_name(26, 0, 0, distance = T)
-# exact matching brain region with distance mode off (much faster)
+# Exact matching brain region with distance mode off (much faster)
 mni_to_region_name(26, 0, 0, distance = F)
 
-# no exact matching brain region with distance mode on (output the nearest brain region name)
+# No exact matching brain region with distance mode on (output the nearest brain region name)
 mni_to_region_name(0, 0, 0, distance = T)
-# no exact matching brain region  with distance mode off (output nothing)
+# No exact matching brain region  with distance mode off (output nothing)
 mni_to_region_name(0, 0, 0, distance = F)
 
-# only acquire AAL region name
-mni_to_region_name(26, 0, 0, distance = T,template = "aal")
+# Only acquire AAL region name
+mni_to_region_name(26, 0, 0, distance = T, template = "aal")
+}
+\seealso{
+\code{\link{region_name_to_mni}}
 }
