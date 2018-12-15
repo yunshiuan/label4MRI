@@ -22,10 +22,11 @@ Input a brain region name, output the corresponding MNI coordinates.
 This is the inverse function of the function \code{mni_to_region_name()}.
 }
 \examples{
-# Get the MNI cooridnates of right precentral region defined by AAL template
+# Get the MNI cooridnates of the right precentral region
+# defined by AAL template
 region_name_to_mni(region_names = "Precentral_R", template = "aal")
 
-# Get the MNI cooridnates of the union of both right and left precentral region
+# Get the MNI cooridnates of both the right and left precentral region
 # defined by AAL template
 region_name_to_mni(
   region_names = c("Precentral_R", "Precentral_L"),
