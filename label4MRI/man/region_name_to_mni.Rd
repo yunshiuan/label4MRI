@@ -32,3 +32,6 @@ region_name_to_mni(
   template = "aal"
 )
 }
+\seealso{
+\code{\link{mni_to_region_name}}
+}
