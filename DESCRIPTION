@@ -1,10 +1,10 @@
 Package: label4MRI
 Type: Package
-Title: MRI-labeling: MNI-to-AAL and BA
-Version: 1.1
+Title: MRI-labeling
+Version: 1.2
 Author: Chuang, Yun-Shiuan
 Maintainer: Chuang, Yun-Shiuan <yunshiuan.chuang@gmail.com>
-Description: Input an MNI coordinate, output the corresponding brain region name.
+Description: Input an MNI coordinate, output the corresponding brain region name, and vice versa. Support both Automated Anatomical Labeling (AAL) and Brodmann Area (BA) labeling system.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
