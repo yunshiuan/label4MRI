@@ -27,10 +27,19 @@
 #' @export
 
 region_name_to_mni <- function(region_names, template = "aal") {
-  if_template_exist <- template %in% names(label4mri_metadata)
+  if (length(template) > 1) {
+    stop(paste0("Only one template is allowed at a time."))
+  }
 
+  if_template_exist <- template %in% names(label4mri_metadata)
   if (if_template_exist == F) {
-    stop(paste0("Template ", template, " does not exist."))
+    stop(paste0("Template `", template, "` does not exist."))
+  }
+
+  if_regions_exist <-
+    region_names %in% label4mri_metadata[[.template]]$label$Region_name
+  if (sum(!if_regions_exist) != 0) {
+    stop(paste0("Region `", paste(region_names[!if_regions_exist], collapse = ", "), "` does not exist."))
   }
 
   list_mni_coordinates <- lapply(

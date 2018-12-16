@@ -13,6 +13,11 @@
 #' @export
 
 list_brain_regions <- function(template = c("aal", "ba")) {
+  if_template_exist <- template %in% names(label4mri_metadata)
+  if (sum(!if_template_exist != 0)) {
+    stop(paste0("Template `", paste(template[!if_template_exist], collapse = ", "), "` does not exist."))
+  }
+
   list_of_brain_regions <-
     lapply(
       template,
