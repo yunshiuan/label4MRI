@@ -72,7 +72,7 @@ $ba.label
   # Step2:
   library("devtools")
   # Step3: 
-  install_github("yunshiuan/label4MRI", subdir = "label4MRI") *#This is also only required for the first time*
+  install_github("yunshiuan/label4MRI") *#This is also only required for the first time*
   # Step4: 
   library(label4MRI)
   # Step5: Install completed! 
@@ -150,7 +150,7 @@ $ba.label
   # 步驟二: 
   library("devtools")
   # 步驟三: 
-  install_github("yunshiuan/label4MRI",subdir = "label4MRI") *#該步驟也僅在第一次安裝時需要*
+  install_github("yunshiuan/label4MRI") *#該步驟也僅在第一次安裝時需要*
   # 步驟四: 
   library(label4MRI)
   # 步驟五: 安裝完成! 
