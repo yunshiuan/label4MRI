@@ -34,5 +34,6 @@ region_name_to_mni(
 )
 }
 \seealso{
-\code{\link{mni_to_region_name}}
+\code{\link{mni_to_region_name}} \cr
+\code{\link{list_brain_regions}}
 }

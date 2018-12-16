@@ -7,7 +7,8 @@
 #' (\code{"aal"} or \code{"ba"}). Use \code{"aal"} by default.
 #' @return Return a list of data frames and each of them correspond to a template.
 #' Each data frame consists the MNI coordinates of the input brain region.
-#' @seealso \code{\link{mni_to_region_name}}
+#' @seealso \code{\link{mni_to_region_name}} \cr
+#' \code{\link{list_brain_regions}}
 #' @examples
 #' # Get the MNI cooridnates of the right precentral region
 #' # defined by AAL template
