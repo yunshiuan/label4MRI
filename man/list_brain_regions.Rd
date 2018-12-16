@@ -2,7 +2,7 @@
 % Please edit documentation in R/list_brain_regions.R
 \name{list_brain_regions}
 \alias{list_brain_regions}
-\title{List all brain region names in AAL/BA system.}
+\title{List all brain region names in AAL/BA system}
 \usage{
 list_brain_regions(template = c("aal", "ba"))
 }
