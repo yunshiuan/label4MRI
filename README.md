@@ -73,11 +73,11 @@ $ba.label
 
   ```
   # Step1: 
-  install.packages("devtools") *#This is only required for the first time*   
+  install.packages("devtools") #This is only required for the first time*   
   # Step2:
   library("devtools")
   # Step3: 
-  install_github("yunshiuan/label4MRI") *#This is also only required for the first time*
+  install_github("yunshiuan/label4MRI") #This is also only required for the first time*
   # Step4: 
   library(label4MRI)
   # Step5: Install completed! 
