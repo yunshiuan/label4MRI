@@ -1,0 +1,38 @@
+#' @title
+#' label4MRI: label human brain MRI image by AAL/BA system
+#' @description
+#' The goal is to facilitate brain coordinate labeling.
+#' This is essential for big data processing when dealing with a huge number of
+#' brian coordinates. \cr
+#'
+#' Key functions:
+#' \itemize{
+#' \item \code{\link{mni_to_region_name}}
+#'   \itemize{
+#'   \item Input an MNI coordinate, output the corresponding AAL
+#'     (Automated Anatomical Labeling) and BA (Brodmann area) brain region name.
+#'   \item More importantly, if the coordinate does not match a brain region defined
+#'     by AAL/BA (e.g., white matter), the package help find the
+#'     closest brain region along with the corresponding distance.
+#'   }
+#' \item \code{\link{region_name_to_mni}}
+#'   \itemize{
+#'   \item Input a brain region name, output the MNI coordinates within it.
+#'   }
+#' \item \code{\link{list_brain_regions}}
+#'   \itemize{
+#'   \item List the brain regions defined by each labeling system.
+#'   }
+#' }
+#'
+#' @author
+#' \strong{Main Author and Maintainer}: Chuang, Yun-Shiuan (Sean) \email{yunshiuan.chuang@@gmail.com} \cr
+#'
+#' Other contributors:
+#' \itemize{
+#' \item Losses Don
+#' }
+#' @seealso
+#' Github : \link{https://github.com/yunshiuan/label4MRI} \cr
+#' Report bugs or comments at \link{https://github.com/yunshiuan/label4MRI/issues}
+"_PACKAGE"

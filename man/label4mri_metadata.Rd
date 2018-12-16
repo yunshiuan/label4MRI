@@ -9,12 +9,13 @@ The data set `label4mri_metadata` include the mapping information for each templ
 Each element encodes the relations between MNI coordinates and brain regions.
 
 The source of the templates:
-\itemize{
-  \item Automated Anatomical Labeling (AAL) \cr
-  MRIcron \cr
-  http://people.cas.sc.edu/rorden/mricron/main.html
-  \item Brodmann Area (BA) \cr
-  BioImage Suite \cr
-  https://bioimagesuiteweb.github.io/bisweb-manual/tools/mni2tal.html
+\describe{
+  \item{Automated Anatomical Labeling (AAL)}{
+    \href{http://people.cas.sc.edu/rorden/mricron/main.html}{MRIcron}
+    }
+  \item{Brodmann Area (BA)}{
+    \href{https://bioimagesuiteweb.github.io/bisweb-manual/tools/mni2tal.html}{
+      BioImage Suite}
+    }
 }
 }
