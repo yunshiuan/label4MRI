@@ -35,4 +35,7 @@
 #' @seealso
 #' Github : \link{https://github.com/yunshiuan/label4MRI} \cr
 #' Report bugs or comments at \link{https://github.com/yunshiuan/label4MRI/issues}
-"_PACKAGE"
+#'
+#' @docType package
+#' @name label4MRI
+NULL
