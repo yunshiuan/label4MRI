@@ -1,5 +1,5 @@
 #' @title
-#' Output the MNI coordinates of a brain region name defined by AAL/BA labeling system
+#' Output the MNI coordinates of brain regions defined by AAL/BA system
 #' @description
 #' Input a brain region name, output the corresponding MNI coordinates.
 #' This is the inverse function of the function \code{mni_to_region_name()}.

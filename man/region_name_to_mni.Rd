@@ -2,7 +2,7 @@
 % Please edit documentation in R/region_name_to_mni.R
 \name{region_name_to_mni}
 \alias{region_name_to_mni}
-\title{Output the MNI coordinates of a brain region name defined by AAL/BA labeling system}
+\title{Output the MNI coordinates of brain regions defined by AAL/BA system}
 \usage{
 region_name_to_mni(region_names, template = "aal")
 }
