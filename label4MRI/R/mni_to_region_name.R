@@ -29,6 +29,14 @@
 #'
 #' # Only acquire AAL region name
 #' mni_to_region_name(26, 0, 0, distance = T, template = "aal")
+#'
+#' # Label multiple MNI coordinates at once
+#' # Three cooridnates: [1, 1, 4], [10, 2, 55] and [-1, 3, -6]
+#' mapply(mni_to_region_name,
+#'   x = c(1, 10, -1),
+#'   y = c(1, 2, 3),
+#'   z = c(4, 55, -6)
+#' )
 #' @export
 
 mni_to_region_name <- function(x, y, z, distance = T, template = c("aal", "ba")) {
