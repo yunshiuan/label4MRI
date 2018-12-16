@@ -37,7 +37,7 @@ region_name_to_mni <- function(region_names, template = "aal") {
   }
 
   if_regions_exist <-
-    region_names %in% label4mri_metadata[[.template]]$label$Region_name
+    region_names %in% label4mri_metadata[[template]]$label$Region_name
   if (sum(!if_regions_exist) != 0) {
     stop(paste0("Region `", paste(region_names[!if_regions_exist], collapse = ", "), "` does not exist."))
   }
