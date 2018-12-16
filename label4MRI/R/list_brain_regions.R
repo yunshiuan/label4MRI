@@ -1,5 +1,5 @@
 #' @title
-#' List all brain region names in AAL/BA system.
+#' List all brain region names in AAL/BA system
 #' @description
 #' Input template names, output all the brain region names.
 #' @param template A character value which indicates the templates of interest
