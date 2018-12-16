@@ -1,4 +1,4 @@
-# MRI-labeling: label the brain MNI coordinate by AAL/BA system
+# MRI-labeling: label human brain MRI image by AAL/BA system
 - ##### Under the R program environment,input an MNI coordinate, output the corresponding AAL(Automated Anatomical Labeling) and BA (Brodmann area) brain region name. More importantly, if the coordinate does not match a brain region defined by AAL/BA (e.g., white matter), the package help find the closest brain region with the corresponding distance.
 &#13;&#10;
 - ##### 在R程式語言中輸入MNI座標，輸出對應的AAL/BA腦區。
