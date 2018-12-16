@@ -6,10 +6,13 @@
 <English version instruction comes first. (中文版本說明在後方)>
 #### CATALOG 
     1. Why and when do I need the package?
-    2. How to use it?
+    2. How to use it? 
+        Input MNI coordinates -> Output region names
     3. How to install it? Simple easy!
     4. Advanced issue: What if I have a hundred of MNI coordinates?
     5. Other functions
+        5.1 Input region names -> Output MNI cooridnates
+        5.2 List all brain region names
 #### 目錄 
     1. 何時我需要用到該套件呢 ?
     2. 該怎麼使用該套件呢?
@@ -102,7 +105,7 @@ $ba.label
     --> write.csv(Result,"Myresult.csv")
 
  ### 5. Other functions
-- #### **Input Region Names -> Output MNI Cooridnates**
+- #### 5.1 **Input Region Names -> Output MNI Cooridnates**
 region_name_to_mni(region_names, template = "aal")
 
 - Input description: 
@@ -113,6 +116,17 @@ region_name_to_mni(region_names, template = "aal")
    - Get the MNI cooridnates of the right precentral region defined by AAL template
  ```
 > region_name_to_mni(region_names = "Precentral_R", template = "aal")
+ ```
+ - #### 5.2 **List All Brain Region Names**
+list_brain_regions(template = c("aal", "ba"))
+
+- Input description: 
+   -template:
+   A character value which indicates the templates of interest ("aal" or "ba"). Use both of them by default.
+ - #### **Example**
+   - Get the MNI cooridnates of the right precentral region defined by AAL template
+ ```
+> list_brain_regions(template = "aal")
  ```
  
  ### 1. 何時我需要用到該套件呢 ?：
