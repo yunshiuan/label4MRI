@@ -5,31 +5,36 @@
 
 <English version instruction comes first. (中文版本說明在後方)>
 #### CATALOG 
-    1.Why and when do I need the package?
-    2.How to use it?
-    3.How to install it? Simple easy!
-    4.Advanced issue: What if I have a hundred of MNI coordinates?
+    1. Why and when do I need the package?
+    2. How to use it? 
+        Input MNI coordinates -> Output region names
+    3. How to install it? Simple easy!
+    4. Advanced issue: What if I have a hundred of MNI coordinates?
+    5. Other functions
+        5.1 Input region names -> Output MNI cooridnates
+        5.2 List all brain region names
 #### 目錄 
-    1.何時我需要用到該套件呢 ?
-    2.該怎麼使用該套件呢?
-    3.如何安裝?非常簡單!
-    4.進階議題:如果我有100個MNI座標呢?
+    1. 何時我需要用到該套件呢 ?
+    2. 該怎麼使用該套件呢?
+    3. 如何安裝?非常簡單!
+    4. 進階議題:如果我有100個MNI座標呢?
  
-### 1.Why and when do I need the package?
+### 1. Why and when do I need the package?
 - Those who work with MRI (Magnetic resonance imaging) data **often want to know how dozens of MNI coordinates correspond to which anatomical brain regions  (e.g., [x = 18, y = -5, z = 20] belong to the brain region "Right Caudate")**. 
 
 - However, to my knowledge, **all the free programs/tools with this feature are GUI-based(e.g. MRIcron, XJview,aal toolbox)**. That is, one need to manually key in/click on the interested MNI coordinate and manullay copy down the region name shown on the screen. **This could be quite tedious and time-consuming when one is dealing with dozens or more MNI coordiante. Yet, none available tools provide program-embedded code.**
 
 - Therefore, **I create the R package "label4MRI" for MNI labeling.** 
 
- ### 2.How to use the label4MRI package?
- - #### **The Main Function: mni_to_region_name(x, y, z, distance = T, template = c("aal", "ba"))**
+ ### 2. How to use the label4MRI package?
+ - #### **Input MNI Coordinates -> Output Region Names**
+ **mni_to_region_name(x, y, z, distance = T, template = c("aal", "ba"))**
  
  - Input description: 
     - x, y, z : x,y,z value of the mni coordinate.
     - distance(default is T): If the MNI coordinate does not belong to any AAL/BA brain region (e.g. white matter, ventricle), then output the closest AAL/BA brain region name and the their distance (mm). When the MNI coordinate does fall into an AAL brain region, then output distance=0.
  - #### **Examples**
- - Example 1, when the mni coordinate has a corresponding region:
+   - Example 1, when the mni coordinate has a corresponding region:
  ```
  > mni_to_region_name(x = 26, y = 0, z = 0)  
  
@@ -45,7 +50,7 @@ $ba.distance
 $ba.label
 [1] "Right-Putamen (49)"
  ```
- - Example 2, when the mni coordinate does NOT have a corresponding region:
+   - Example 2, when the mni coordinate does NOT have a corresponding region:
  ```
  > mni_to_region_name(x = 0, y = 0, z = 0)  
  
@@ -61,7 +66,7 @@ $ba.distance
 $ba.label
 [1] "Left-Thalamus (50)"
  ```
-        
+ 
  ### 3. How to install the package? Simple easy!
   #### Install via R command line.
   ###### *Please type the following codes in R command line*
@@ -79,7 +84,7 @@ $ba.label
   # Try "mni_to_region_name(x = 0, y = 0, z = 0)", you should get the results as above.
   ```
   
- ### 4.Advanced issue: What if I have a hundred of MNI coordinates? (done within 10 seconds!)
+ ### 4. Advanced issue: What if I have a hundred of MNI coordinates? (done within 10 seconds!)
 ##### When one has a hundred of MNI coordinates and want to know their corresponding AAL/BA region name, one could simply implement the following R codes:  
  - (1) Create a data frame which contains all the MNI coordinates.
     - "m" as a data frame, which contains 100 rows of MNI coordinates, along with 3 variables represent their MNI coordinates. "m$x" corresponds to the x value of MNI coordinate of the 100 MNI coordinates, and so on.  
@@ -98,8 +103,33 @@ $ba.label
      -->View(Result) 
     - If you want to save it as a csv file for further usage.  
     --> write.csv(Result,"Myresult.csv")
-    
- ### 1.何時我需要用到該套件呢 ?：
+
+ ### 5. Other functions
+- #### 5.1 **Input Region Names -> Output MNI Cooridnates**
+region_name_to_mni(region_names, template = "aal")
+
+- Input description: 
+   -region_names: A character vector which indeicates the brain region names of interest. Use list_brain_regions() to see all brain region names defined by AAL/BA system.
+   -template:
+   One character value which indicates the templates to use ("aal" or "ba"). Use "aal" by default.
+ - #### **Example**
+   - Get the MNI cooridnates of the right precentral region defined by AAL template
+ ```
+> region_name_to_mni(region_names = "Precentral_R", template = "aal")
+ ```
+ - #### 5.2 **List All Brain Region Names**
+list_brain_regions(template = c("aal", "ba"))
+
+- Input description: 
+   -template:
+   A character value which indicates the templates of interest ("aal" or "ba"). Use both of them by default.
+ - #### **Example**
+   - Get the MNI cooridnates of the right precentral region defined by AAL template
+ ```
+> list_brain_regions(template = "aal")
+ ```
+ 
+ ### 1. 何時我需要用到該套件呢 ?：
  - 有時後MNI 座標非常多，希望能一次**知道所有MNI座標所對應的腦區名稱**為何。然而，目前的程式都是GUI介面(如：MRIcron,XJview,aal.toolbox)，要手動一個一個按按鈕，當作標很多的時候很花時間，且也無法和R code鑲嵌再一起。目前似乎沒有人寫能在command line執行的function code。
  - 因此，我用Rcode寫了可以執行該功能的函數。歡迎有需要的人下載使用。該函數已被測試過，結果和MRIcron的完全相同，可以放心使用。此外，**該套件比MRIcron更厲害**，當MNI座標沒有直接對應的腦區名稱時，可以回報離它最近的腦區名稱以及對應的距離。
 
