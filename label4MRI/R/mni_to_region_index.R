@@ -1,11 +1,13 @@
-#' @title Label the brain MNI coordinate with brain index by AAL/BA system
-#' @description Input an MNI coordinate, output the corresponding AAL/BA brain region index.
+#' @title
+#' Label the brain MNI coordinate with brain index by AAL/BA system
+#' @description
+#' Input an MNI coordinate, output the corresponding AAL/BA brain region index.
 #' @param x The numeric x value of the MNI coordinate.
 #' @param y The numeric y value of the MNI coordinate.
 #' @param z The numeric z value of the MNI coordinate.
 #' @param distance  A logical value which indicates whether the closest region
-#' should be shown when there is no exact match (\code{default = T}).
-#' This could be turned off to speed up the labeling process.
+#'   should be shown when there is no exact match (\code{default = T}).
+#'   This could be turned off to speed up the labeling process.
 #' @param template One character value which indicates the templates to use.
 #' @keywords internal
 #' @noRd

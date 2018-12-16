@@ -1,10 +1,13 @@
-#' @title Output the MNI coordinates of a brain region index defined by AAL/BA labeling system.
-#' @description Input a brain region index, output the corresponding MNI coordinates.
+#' @title
+#' Output the MNI coordinates of a brain region index defined by AAL/BA labeling system.
+#' @description
+#' Input a brain region index, output the corresponding MNI coordinates.
 #' This is the inverse function of the function (\code{mni_to_region_name()}).
 #' @param region_index A numeric vector which indeicates the brain region index of interest.
 #' @param template One character value which indicates the templates to use
-#' ((\code{"aal"}) or (\code{"ba"})).
-#' @return Return a data frame consisting the x,y,z MNI coordinates of the input brain region.
+#'   ((\code{"aal"}) or (\code{"ba"})).
+#' @return
+#' Return a data frame consisting the x,y,z MNI coordinates of the input brain region.
 #' @examples
 #' # Get the MNI cooridnates of right precentral region defined by AAL template.
 #' region_name_to_mni(region_index = 2, template = "aal")

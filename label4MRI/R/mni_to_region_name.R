@@ -1,21 +1,26 @@
-#' @title MRI-labeling: label the brain MNI coordinate by AAL/BA system
-#' @description Input an MNI coordinate, output the corresponding AAL/BA brain region name.
+#' @title
+#' MRI-labeling: label the brain MNI coordinate by AAL/BA system
+#' @description
+#' Input an MNI coordinate, output the corresponding AAL/BA brain region name.
 #' @param x The numeric x value of the MNI coordinate.
 #' @param y The numeric y value of the MNI coordinate.
 #' @param z The numeric z value of the MNI coordinate.
 #' @param distance  A logical value which indicates whether the closest region
-#' should be shown when there is no exact match (\code{default = T}).
-#' This could be turned off to speed up the labeling process.
+#'   should be shown when there is no exact match (\code{default = T}).
+#'   This could be turned off to speed up the labeling process.
 #' @param template A character vector which indicates the templates to use
 #' (\code{"aal"} or \code{"ba"}). Use both of them by default.
-#' @return If distance mode is on (\code{distance = T}),
+#' @return
+#' If distance mode is on (\code{distance = T}),
 #' output a list of brain region names along with the corresponding distances (mm).
+#'
 #' Please set \code{distance = T} if you want the closest region name even when
 #' there is no exact matching brain region.
 #' If distance mode is off (\code{distance = F}),
 #' output a string of region names only when available,
 #' otherwise output 'NULL'.
-#' @seealso \code{\link{region_name_to_mni}}
+#' @seealso
+#' \code{\link{region_name_to_mni}}
 #' @examples
 #' # Exact matching brain region with distance mode on
 #' mni_to_region_name(26, 0, 0, distance = T)

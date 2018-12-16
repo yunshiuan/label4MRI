@@ -23,6 +23,7 @@ This could be turned off to speed up the labeling process.}
 \value{
 If distance mode is on (\code{distance = T}),
 output a list of brain region names along with the corresponding distances (mm).
+
 Please set \code{distance = T} if you want the closest region name even when
 there is no exact matching brain region.
 If distance mode is off (\code{distance = F}),
