@@ -8,9 +8,6 @@
 #'   ((\code{"aal"}) or (\code{"ba"})).
 #' @return
 #' Return a data frame consisting the x,y,z MNI coordinates of the input brain region.
-#' @examples
-#' # Get the MNI cooridnates of right precentral region defined by AAL template.
-#' region_name_to_mni(region_index = 2, template = "aal")
 #' @keywords internal
 #' @noRd
 
