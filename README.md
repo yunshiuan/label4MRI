@@ -109,8 +109,8 @@ $ba.label
 region_name_to_mni(region_names, template = "aal")
 
 - Input description: 
-   -region_names: A character vector which indeicates the brain region names of interest. Use list_brain_regions() to see all brain region names defined by AAL/BA system.
-   -template:
+   - region_names: A character vector which indeicates the brain region names of interest. Use list_brain_regions() to see all brain region names defined by AAL/BA system.
+   - template:
    One character value which indicates the templates to use ("aal" or "ba"). Use "aal" by default.
  - #### **Example**
    - Get the MNI cooridnates of the right precentral region defined by AAL template
