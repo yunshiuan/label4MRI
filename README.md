@@ -102,15 +102,15 @@ $ba.label
     --> write.csv(Result,"Myresult.csv")
 
  ### 5. Other functions
-- #### **2.1.2. Input Region Names -> Output MNI Cooridnates**
+- #### **Input Region Names -> Output MNI Cooridnates**
 region_name_to_mni(region_names, template = "aal")
 
 - Input description: 
    -region_names: A character vector which indeicates the brain region names of interest. Use list_brain_regions() to see all brain region names defined by AAL/BA system.
    -template:
    One character value which indicates the templates to use ("aal" or "ba"). Use "aal" by default.
- - #### **Examples**
-   - Example 1, Get the MNI cooridnates of the right precentral region defined by AAL template
+ - #### **Example**
+   - Get the MNI cooridnates of the right precentral region defined by AAL template
  ```
 > region_name_to_mni(region_names = "Precentral_R", template = "aal")
  ```
