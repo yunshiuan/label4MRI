@@ -9,6 +9,15 @@
 #'   should be shown when there is no exact match (\code{default = T}).
 #'   This could be turned off to speed up the labeling process.
 #' @param template One character value which indicates the templates to use.
+#' @return
+#' If distance mode is on (\code{distance = T}),
+#' output a list of brain region indexes along with the corresponding distances (mm).
+#'
+#' Please set \code{distance = T} if you want the closest region index even when
+#' there is no exact matching brain region.
+#' If distance mode is off (\code{distance = F}),
+#' output a string of region indexs only when available,
+#' otherwise output 'NULL'.
 #' @keywords internal
 #' @noRd
 
