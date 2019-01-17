@@ -2,7 +2,7 @@
 #' Show brain cluster composition
 #' @description
 #' Input a matrix of all MNI coordinates within a cluster,
-#' and output the brain regions and the percentage of each region. 
+#' and output the brain regions and the percentage of each region.
 #' @param template One character vector which indicates the templates to use
 #' (\code{"aal"} or \code{"ba"}). Use \code{"aal"} by default.
 #' @return
@@ -13,13 +13,9 @@
 #' \code{\link{show_nii_clusters}}
 #' @export
 
-
-# 1/16 found out it cant handel single template ...................... and output is UGLY
-
 show_cluster_composition <- function(coordinate_matrix, template = c("aal", "ba")) {
 
   # example matrix used: coordinate_matrix <- matrix(4:39, nrow = 3)
-
   if_template_exist <- template %in% names(label4mri_metadata)
 
   if (sum(!if_template_exist) != 0) {
@@ -37,12 +33,12 @@ show_cluster_composition <- function(coordinate_matrix, template = c("aal", "ba"
 
   all_regions <- apply(result[, paste0(template, ".label")], 2, as.list)
 
-  unique_regions <- lapply(all_regions, # length = number of templates
+  unique_regions <- lapply(all_regions,
     FUN = unique
   )
 
   percentage <-
-    lapply(seq_along(all_regions), # length = number of templates
+    lapply(seq_along(all_regions),
       FUN = function(tem_index) {
         region_table <- table(unlist(all_regions[[tem_index]]))
 
