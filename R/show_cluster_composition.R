@@ -9,6 +9,9 @@
 #' Return a list of data frames and each of them correspond to a template.
 #' Each data frame consists the brain region names and the corresponding percentage
 #' of the input brain cluster.
+
+#' If the coordinate does not fall into any labeled brain region (e.g., white matter),
+#' it will be labeled as "NULL".
 #' @seealso
 #' \code{\link{show_nii_clusters}}
 #' @export
