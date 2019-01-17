@@ -57,4 +57,5 @@ mapply(mni_to_region_name,
 }
 \seealso{
 \code{\link{region_name_to_mni}}
+\code{\link{show_cluster_composition}}
 }

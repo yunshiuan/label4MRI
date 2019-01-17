@@ -21,6 +21,7 @@
 #' otherwise output 'NULL'.
 #' @seealso
 #' \code{\link{region_name_to_mni}}
+#' \code{\link{show_cluster_composition}}
 #' @examples
 #' # Exact matching brain region with distance mode on
 #' mni_to_region_name(26, 0, 0, distance = TRUE)
