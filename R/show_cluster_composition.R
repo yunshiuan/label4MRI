@@ -1,8 +1,8 @@
 #' @title
 #' Show brain cluster composition
 #' @description
-#' Input a matrix of all MNI coordinates within a cluster,
-#' and output the brain regions and the percentage of each region.
+#' Input a matrix of all MNI coordinates within a cluster, and output
+#' the cluster composition (i.e., percentage of each brain region within it).
 #' @param coordinate_matrix A matrix of the size 3 x N, which N is the number of
 #' coordinates with the cluster of interest. Three rows correspond to the
 #' x, y, z MNI values of each coordinate.

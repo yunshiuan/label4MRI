@@ -28,6 +28,11 @@ Key functions:
   \itemize{
   \item List the brain regions defined by each labeling system.
   }
+\item \code{\link{show_cluster_composition}}
+  \itemize{
+  \item Show brain cluster composition (i.e., percentage of each brain region
+   within it).
+  }
 }
 }
 \seealso{

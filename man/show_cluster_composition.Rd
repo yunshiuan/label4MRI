@@ -23,8 +23,8 @@ If there are coordinates which do not fall into any labeled brain region
 (e.g., white matter), it will be labeled as "NULL".
 }
 \description{
-Input a matrix of all MNI coordinates within a cluster,
-and output the brain regions and the percentage of each region.
+Input a matrix of all MNI coordinates within a cluster, and output
+the cluster composition (i.e., percentage of each brain region within it).
 }
 \examples{
 # Assume there is a cluster of brain coordinates that you want to know
