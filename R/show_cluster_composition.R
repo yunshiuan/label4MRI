@@ -3,6 +3,9 @@
 #' @description
 #' Input a matrix of all MNI coordinates within a cluster,
 #' and output the brain regions and the percentage of each region.
+#' @param coordinate_matrix A matrix of the size 3 x N, which N is the number of
+#' coordinates with the cluster of interest. Three rows correspond to the
+#' x, y, z MNI values of each coordinate.
 #' @param template One character vector which indicates the templates to use
 #' (\code{"aal"} or \code{"ba"}). Use both of them by default.
 #' @return
@@ -16,9 +19,9 @@
 #' \code{\link{show_nii_clusters}}
 #' @examples
 #' # Assume there is a cluster of brain coordinates that you want to know
-#' # its composition
+#' # its composition.
 #' # The cluster has 10 coordinates which MNI coordinates fall in the cube with
-#' # min corner [10, 10, -5] to max cormer [15, 15, 0]
+#' # min corner [10, 10, -5] and max cormer [15, 15, 0]
 #' set.seed(1)
 #' brain_matrix <- matrix(cbind(
 #'   x = runif(n = 10, min = 10, max = 15),
