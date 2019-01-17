@@ -4,7 +4,7 @@
 #' Input a matrix of all MNI coordinates within a cluster,
 #' and output the brain regions and the percentage of each region.
 #' @param template One character vector which indicates the templates to use
-#' (\code{"aal"} or \code{"ba"}). Use \code{"aal"} by default.
+#' (\code{"aal"} or \code{"ba"}). Use both of them by default.
 #' @return
 #' Return a list of data frames and each of them correspond to a template.
 #' Each data frame consists the brain region names and the corresponding percentage
