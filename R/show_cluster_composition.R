@@ -37,15 +37,6 @@ show_cluster_composition <- function(coordinate_matrix, template = c("aal", "ba"
     stop(paste0("Template `", paste(template[!if_template_exist], collapse = ", "), "` does not exist."))
   }
 
-  # result <- t(mapply(
-  #   FUN = mni_to_region_name,
-  #   x = coordinate_matrix[1, ],
-  #   y = coordinate_matrix[2, ],
-  #   z = coordinate_matrix[3, ],
-  #   distance = F,
-  #   MoreArgs = list(template = template)
-  # ))
-
   list_frequency_table <-
     lapply(
       template,
@@ -87,21 +78,6 @@ show_cluster_composition <- function(coordinate_matrix, template = c("aal", "ba"
     "composition",
     sep = "."
   )
-
-  # all_regions <- apply(result[, paste0(template, ".label")], 2, as.list)
-  #
-  # unique_regions <- lapply(all_regions,
-  #   FUN = unique
-  # )
-
-  # percentage <-
-  #   lapply(seq_along(all_regions),
-  #     FUN = function(tem_index) {
-  #       region_table <- table(unlist(all_regions[[tem_index]]))
-  #
-  #       paste0(round((unname(region_table) / sum(unname(region_table))) * 100, digits = 2), "%")
-  #     }
-  #   )
 
   list_frequency_table
 }
