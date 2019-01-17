@@ -1,27 +1,16 @@
 #' @title
-#' Output the brain region composition percentage in AAL, BA or both labeling systems.
+#' Show cluster composition.
 #' @description
-#' ...
-#' ...
-#' @param template One character value which indicates the templates to use
+#' Input a matrix of all MNI coordinates within a cluster,
+#' and output the brain regions and the percentage of each region. 
+#' @param template One character value which indicates the templates to use.
 #'   (\code{"aal"} or \code{"ba"}). Use \code{"aal"} by default.
 #' @return
 #' Return a list of data frames and each of them correspond to a template.
-#' Each data frame consists the MNI coordinates of the input brain region.
+#' Each data frame consists the brain region names and the corresponding percentage
+#' of the input brain cluster.
 #' @seealso
-#' \code{\link{mni_to_region_name}} \cr
-#' \code{\link{list_brain_regions}}
-#' @examples
-#' # Get the MNI cooridnates of the right precentral region
-#' # defined by AAL template
-#' region_name_to_mni(region_names = "Precentral_R", template = "aal")
-#'
-#' # Get the MNI cooridnates of both the right and left precentral region
-#' # defined by AAL template
-#' region_name_to_mni(
-#'   region_names = c("Precentral_R", "Precentral_L"),
-#'   template = "aal"
-#' )
+#' \code{\link{show_nii_clusters}}
 #' @keywords internal
 #' @noRd
 
