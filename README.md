@@ -1,3 +1,4 @@
+# New Document
 # MRI-labeling: label human brain MRI image by AAL/BA system
 - ##### Under the R program environment,input an MNI coordinate, output the corresponding AAL(Automated Anatomical Labeling) and BA (Brodmann area) brain region name. More importantly, if the coordinate does not match a brain region defined by AAL/BA (e.g., white matter), the package help find the closest brain region with the corresponding distance.
 &#13;&#10;
@@ -7,12 +8,17 @@
 #### CATALOG 
     1. Why and when do I need the package?
     2. How to use it? 
-        Input MNI coordinates -> Output region names
+        mni_to_region_name(): 
+        	Input MNI coordinates -> Output region names
     3. How to install it? Simple easy!
     4. Advanced issue: What if I have a hundred of MNI coordinates?
     5. Other functions
-        5.1 Input region names -> Output MNI cooridnates
-        5.2 List all brain region names
+        5.1 region_name_to_mni(): 
+        	Input region names -> Output MNI cooridnates
+        5.2 list_brain_regions():
+        	List all brain region names in templates
+        5.3 show_cluster_composition():
+        	Show the composition of a cluster of cooridinates
 #### 目錄 
     1. 何時我需要用到該套件呢 ?
     2. 該怎麼使用該套件呢?
@@ -102,7 +108,7 @@ $ba.label
     - Get the tidy format of the AAL/BA name of the 100 MNI coordinates.  
      -->View(Result) 
     - If you want to save it as a csv file for further usage.  
-    --> write.csv(Result,"Myresult.csv")
+    --> write.csv(Result,"labeled_result.csv")
 
  ### 5. Other functions
 - #### 5.1 **Input Region Names -> Output MNI Cooridnates**
@@ -112,21 +118,47 @@ region_name_to_mni(region_names, template = "aal")
    - region_names: A character vector which indeicates the brain region names of interest. Use list_brain_regions() to see all brain region names defined by AAL/BA system.
    - template:
    One character value which indicates the templates to use ("aal" or "ba"). Use "aal" by default.
- - #### **Example**
-   - Get the MNI cooridnates of the right precentral region defined by AAL template
+ - ##### **Example**
  ```
+# Get the MNI cooridnates of the right precentral region defined by AAL template
 > region_name_to_mni(region_names = "Precentral_R", template = "aal")
  ```
  - #### 5.2 **List All Brain Region Names**
 list_brain_regions(template = c("aal", "ba"))
 
 - Input description: 
-   -template:
+   - template:
    A character value which indicates the templates of interest ("aal" or "ba"). Use both of them by default.
- - #### **Example**
-   - Get the MNI cooridnates of the right precentral region defined by AAL template
+ - ##### **Example**
  ```
+# Get the MNI cooridnates of the right precentral region defined by AAL template
 > list_brain_regions(template = "aal")
+ ```
+ 
+  - #### 5.3 **Show Cluster Composition**
+show_cluster_composition(coordinate_matrix, template = c("aal", "ba"))
+
+
+- Input description: 
+   - coordinate_matrix:
+   A matrix of the size 3 x N, which N is the number of coordinates with the cluster of interest. Three rows correspond to the x, y, z MNI values of each coordinate. 	
+   - template:
+   A character value which indicates the templates of interest ("aal" or "ba"). Use both of them by default.
+ - ##### **Example**
+
+ ```
+# Assume there is a cluster of brain coordinates that you want to know
+# its composition.
+# The cluster has 10 coordinates which MNI coordinates fall in the cube with
+# min corner [10, 10, -5] and max cormer [15, 15, 0]
+
+> set.seed(1)
+> brain_matrix <- matrix(cbind(
+     x = runif(n = 10, min = 10, max = 15),
+     y = runif(n = 10, min = 10, max = 15),
+     z = runif(n = 10, min = -5, max = 0)
+ ), nrow = 3, byrow = T)
+ > show_cluster_composition(brain_matrix)
  ```
  
  ### 1. 何時我需要用到該套件呢 ?：
