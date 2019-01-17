@@ -1,5 +1,5 @@
 #' @title
-#' Show cluster composition.
+#' Show brain cluster composition
 #' @description
 #' Input a matrix of all MNI coordinates within a cluster,
 #' and output the brain regions and the percentage of each region. 
