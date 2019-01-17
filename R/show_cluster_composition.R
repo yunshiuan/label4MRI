@@ -14,6 +14,13 @@
 #' it will be labeled as "NULL".
 #' @seealso
 #' \code{\link{show_nii_clusters}}
+#' @examples
+#' # Assume there is a cluster of brain coordinates that you want to know
+#' # its composition
+#' # The cluster has 10 coordinates which MNI coordinates are as follow.
+#' [-5, -5, -5], [-4, -4, -4], ..., [5, 5, 5]
+#' brain_matrix = matrix(cbind(x=-5:5,y=-5:5,z=-5:5), nrow = 3,byrow = T)
+#' show_cluster_composition(brain_matrix)
 #' @export
 
 show_cluster_composition <- function(coordinate_matrix, template = c("aal", "ba")) {

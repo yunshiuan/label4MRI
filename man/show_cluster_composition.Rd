@@ -8,7 +8,7 @@ show_cluster_composition(coordinate_matrix, template = c("aal", "ba"))
 }
 \arguments{
 \item{template}{One character vector which indicates the templates to use
-(\code{"aal"} or \code{"ba"}). Use \code{"aal"} by default.}
+(\code{"aal"} or \code{"ba"}). Use both of them by default.}
 }
 \value{
 Return a list of data frames and each of them correspond to a template.
@@ -20,6 +20,14 @@ it will be labeled as "NULL".
 \description{
 Input a matrix of all MNI coordinates within a cluster,
 and output the brain regions and the percentage of each region.
+}
+\examples{
+# Assume there is a cluster of brain coordinates that you want to know
+# its composition
+# The cluster has 10 coordinates which MNI coordinates are as follow.
+[-5, -5, -5], [-4, -4, -4], ..., [5, 5, 5]
+brain_matrix = matrix(cbind(x=-5:5,y=-5:5,z=-5:5), nrow = 3,byrow = T)
+show_cluster_composition(brain_matrix)
 }
 \seealso{
 \code{\link{show_nii_clusters}}
