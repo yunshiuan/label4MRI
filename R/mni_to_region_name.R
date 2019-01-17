@@ -51,6 +51,10 @@ mni_to_region_name <- function(x, y, z, distance = T, template = c("aal", "ba"))
     stop(paste0("Template `", paste(template[!if_template_exist], collapse = ", "), "` does not exist."))
   }
 
+  x <- round(x)
+  y <- round(y)
+  z <- round(z)
+
   r_indexes <- lapply(
     template,
     function(.template) {
