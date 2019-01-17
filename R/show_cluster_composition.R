@@ -6,20 +6,20 @@
 #' @param template One character vector which indicates the templates to use
 #' (\code{"aal"} or \code{"ba"}). Use both of them by default.
 #' @return
-#' Return a list of data frames and each of them correspond to a template.
-#' Each data frame consists the brain region names and the corresponding percentage
+#' Return a list of frequency table and each of them corresponds to a template.
+#' Each table consists the brain region names and the corresponding percentage
 #' of the input brain cluster.
-
-#' If the coordinate does not fall into any labeled brain region (e.g., white matter),
-#' it will be labeled as "NULL".
+#'
+#' If there are coordinates which do not fall into any labeled brain region
+#' (e.g., white matter), it will be labeled as "NULL".
 #' @seealso
 #' \code{\link{show_nii_clusters}}
 #' @examples
 #' # Assume there is a cluster of brain coordinates that you want to know
 #' # its composition
 #' # The cluster has 10 coordinates which MNI coordinates are as follow.
-#' [-5, -5, -5], [-4, -4, -4], ..., [5, 5, 5]
-#' brain_matrix = matrix(cbind(x=-5:5,y=-5:5,z=-5:5), nrow = 3,byrow = T)
+#' # [-5, -5, -5], [-4, -4, -4], ..., [5, 5, 5]
+#' brain_matrix <- matrix(cbind(x = -5:5, y = -5:5, z = -5:5), nrow = 3, byrow = T)
 #' show_cluster_composition(brain_matrix)
 #' @export
 
