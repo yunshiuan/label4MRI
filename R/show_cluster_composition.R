@@ -11,8 +11,7 @@
 #' of the input brain cluster.
 #' @seealso
 #' \code{\link{show_nii_clusters}}
-#' @keywords internal
-#' @noRd
+#' @export
 
 
 # 1/16 found out it cant handel single template ...................... and output is UGLY

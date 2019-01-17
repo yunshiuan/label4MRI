@@ -3,3 +3,4 @@
 export(list_brain_regions)
 export(mni_to_region_name)
 export(region_name_to_mni)
+export(show_cluster_composition)
