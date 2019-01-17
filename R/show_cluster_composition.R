@@ -17,9 +17,14 @@
 #' @examples
 #' # Assume there is a cluster of brain coordinates that you want to know
 #' # its composition
-#' # The cluster has 10 coordinates which MNI coordinates are as follow.
-#' # [-5, -5, -5], [-4, -4, -4], ..., [5, 5, 5]
-#' brain_matrix <- matrix(cbind(x = -5:5, y = -5:5, z = -5:5), nrow = 3, byrow = T)
+#' # The cluster has 10 coordinates which MNI coordinates fall in the cube with
+#' # min corner [10, 10, -5] to max cormer [15, 15, 0]
+#' set.seed(1)
+#' brain_matrix <- matrix(cbind(
+#'   x = runif(n = 10, min = 10, max = 15),
+#'   y = runif(n = 10, min = 10, max = 15),
+#'   z = runif(n = 10, min = -5, max = 0)
+#' ), nrow = 3, byrow = T)
 #' show_cluster_composition(brain_matrix)
 #' @export
 
