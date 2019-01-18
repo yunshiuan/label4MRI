@@ -1,4 +1,3 @@
-# New Document
 # MRI-labeling: label human brain MRI image by AAL/BA system
 - ##### Under the R program environment,input an MNI coordinate, output the corresponding AAL(Automated Anatomical Labeling) and BA (Brodmann area) brain region name. More importantly, if the coordinate does not match a brain region defined by AAL/BA (e.g., white matter), the package help find the closest brain region with the corresponding distance.
 &#13;&#10;
@@ -122,6 +121,18 @@ region_name_to_mni(region_names, template = "aal")
  ```
 # Get the MNI cooridnates of the right precentral region defined by AAL template
 > region_name_to_mni(region_names = "Precentral_R", template = "aal")
+
+
+$aal.Precentral_R
+       x   y  z
+1     64  13 14
+2     63  13 15
+3     64  13 15
+4     65  13 15
+5     66  13 15
+6     63  14 15
+...
+...
  ```
  - #### 5.2 **List All Brain Region Names**
 list_brain_regions(template = c("aal", "ba"))
@@ -133,6 +144,18 @@ list_brain_regions(template = c("aal", "ba"))
  ```
 # Get the MNI cooridnates of the right precentral region defined by AAL template
 > list_brain_regions(template = "aal")
+
+
+
+$aal
+  [1] "Precentral_L"         "Precentral_R"         "Frontal_Sup_L"       
+  [4] "Frontal_Sup_R"        "Frontal_Sup_Orb_L"    "Frontal_Sup_Orb_R"   
+  [7] "Frontal_Mid_L"        "Frontal_Mid_R"        "Frontal_Mid_Orb_L"   
+ [10] "Frontal_Mid_Orb_R"    "Frontal_Inf_Oper_L"   "Frontal_Inf_Oper_R"  
+ [13] "Frontal_Inf_Tri_L"    "Frontal_Inf_Tri_R"    "Frontal_Inf_Orb_L"   
+ ...
+ ...
+ 
  ```
  
   - #### 5.3 **Show Cluster Composition**
@@ -159,6 +182,18 @@ show_cluster_composition(coordinate_matrix, template = c("aal", "ba"))
      z = runif(n = 10, min = -5, max = 0)
  ), nrow = 3, byrow = T)
  > show_cluster_composition(brain_matrix)
+  
+  
+ $aal.cluster.composition
+          Number of coordinates Percentage (%)
+NULL                          6             60
+Caudate_R                     2             20
+Putamen_R                     2             20
+
+$ba.cluster.composition
+                   Number of coordinates Percentage (%)
+NULL                                   6             60
+Right-Caudate (48)                     4             40
  ```
  
  ### 1. 何時我需要用到該套件呢 ?：
