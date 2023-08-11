@@ -16,4 +16,5 @@
 #'     }
 #' }
 #' @docType data
+#' @export
 NULL
