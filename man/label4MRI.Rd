@@ -3,7 +3,6 @@
 \docType{package}
 \name{label4MRI}
 \alias{label4MRI}
-\alias{label4MRI-package}
 \title{label4MRI: label human brain MRI image by AAL/BA system}
 \description{
 The goal is to facilitate brain coordinate labeling.
